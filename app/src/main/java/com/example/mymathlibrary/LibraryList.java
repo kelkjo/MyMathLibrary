@@ -1,7 +1,7 @@
 package com.example.mymathlibrary;
 //yoy
 import static android.view.View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
-import static com.example.mymathlibrary.Theory.theoryKey;
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,10 +17,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.mymathlibrary.Engine.Item;
 import com.example.mymathlibrary.Engine.RecycleAdapter;
-import com.example.mymathlibrary.Engine.RecyclerItemClickListener;
+import com.example.mymathlibrary.Engine.RecyclerInterface;
+
 import java.util.ArrayList;
 
-public class LibraryList extends AppCompatActivity {
+public class LibraryList extends AppCompatActivity implements RecyclerInterface {
     private RecyclerView itemRV;
     private RecycleAdapter adapter;
     private ArrayList<Item> items;
@@ -36,18 +37,6 @@ public class LibraryList extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         buildRecyclerView();
-        itemRV.addOnItemTouchListener(
-                new RecyclerItemClickListener(context, itemRV, new RecyclerItemClickListener.OnItemClickListener() {
-                    @Override public void onItemClick(View view, int position) {
-                        Intent mainActivityIntent = new Intent(LibraryList.this, TheoremIntent.class);
-                        startActivity(mainActivityIntent);
-                    }
-                    @Override public void onLongItemClick(View view, int position) {
-                        Intent mainActivityIntent = new Intent(LibraryList.this, TheoremIntent.class);
-                        startActivity(mainActivityIntent);
-                    }
-                })
-        );
     }
 
     @Override
@@ -107,14 +96,20 @@ public class LibraryList extends AppCompatActivity {
         items.add(new Item("Strawberry","Theory"));
         items.add(new Item("Tangerine","Theory"));
         items.add(new Item("Watermelon","Theory"));
-
-        adapter = new RecycleAdapter(items, LibraryList.this);
-
+        adapter = new RecycleAdapter(items, LibraryList.this, this);
         LinearLayoutManager manager = new LinearLayoutManager(this);
         itemRV.setHasFixedSize(true);
 
         itemRV.setLayoutManager(manager);
 
         itemRV.setAdapter(adapter);
+    }
+    @Override
+    public void onItemClicked(int position) {
+        System.out.println(position);
+        Intent LibraryListIntent = new Intent(LibraryList.this, TheoremIntent.class);
+        LibraryListIntent.putExtra("Name", items.get(position).getItemName());
+        LibraryListIntent.putExtra("Type", items.get(position).getItemType());
+        startActivity(LibraryListIntent);
     }
 }

@@ -8,27 +8,35 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.mymathlibrary.R;
-
 import java.util.ArrayList;
 
 public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHolder> {
     private ArrayList<Item> itemArrayList;
-    public RecycleAdapter(ArrayList<Item> itemArrayList, Context context) {
+    private Context context;
+    private final RecyclerInterface recyclerInterface;
+    public RecycleAdapter(ArrayList<Item> itemArrayList, Context context,
+                          RecyclerInterface recyclerInterface) {
         this.itemArrayList = itemArrayList;
+        this.context = context;
+        this.recyclerInterface = recyclerInterface;
     }
     @SuppressLint("NotifyDataSetChanged")
     public void filterList(ArrayList<Item> filterlist) {
         itemArrayList = filterlist;
         notifyDataSetChanged();
     }
+    public static class ItemViewHolder extends RecyclerView.ViewHolder {
+        public ItemViewHolder(View convertView) {
+            super(convertView);
+        }
+    }
 
     @NonNull
     @Override
     public RecycleAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_theory, parent, false);
-        return new ViewHolder(view);
+        return new ViewHolder(view, recyclerInterface);
     }
 
     @Override
@@ -44,12 +52,23 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHold
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        private final TextView courseNameTV;
-        private final TextView courseDescTV;
-        public ViewHolder(@NonNull View itemView) {
+        TextView courseNameTV;
+        TextView courseDescTV;
+        public ViewHolder(@NonNull View itemView, RecyclerInterface recyclerInterface) {
             super(itemView);
             courseNameTV = itemView.findViewById(R.id.idTVTheoryName);
             courseDescTV = itemView.findViewById(R.id.idTVTheoryDescription);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(recyclerInterface != null){
+                        int pos = getAdapterPosition();
+                        if(pos != RecyclerView.NO_POSITION){
+                            recyclerInterface.onItemClicked(pos);
+                        }
+                    }
+                }
+            });
         }
     }
 }
