@@ -1,9 +1,7 @@
 package com.example.mymathlibrary;
 
 import static android.view.View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
-
 import static com.example.mymathlibrary.Theory.theoryKey;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
