@@ -77,8 +77,8 @@ public class LibraryList extends AppCompatActivity implements RecyclerInterface 
 
     private void buildRecyclerView() {
         items = new ArrayList<>();
-        items.add(new Item("Apple","Theory"));
-        items.add(new Item("Banana","Theory"));
+        items.add(new Item("Теорема Пифагора","Теорема"));
+        items.add(new Item("Теорема Фаллеса","Теорема"));
         items.add(new Item("Cherry","Theory"));
         items.add(new Item("Date","Theory"));
         items.add(new Item("Fig","Theory"));

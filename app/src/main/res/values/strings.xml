@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">MyMathLibrary</string>
+    <string name="your_math_library">My Math Library</string>
+    <string name="library">Library</string>
+    <string name="Library">Библиотека</string>
 </resources>

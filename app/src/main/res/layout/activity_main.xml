@@ -4,16 +4,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bc_alpha"
+    android:backgroundTint="@color/DarkBlue"
     tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/the_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/nunito_h"
+        android:padding="7dp"
+        android:shadowColor="@color/black"
+        android:shadowDx="15"
+        android:shadowDy="10"
+        android:shadowRadius="20"
+        android:text="@string/your_math_library"
+        android:textColor="@color/pinkish"
+        android:textSize="30sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.113"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/iv_library"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="35dp"
+        android:src="@drawable/library"
+        app:layout_constraintEnd_toStartOf="@id/bt_library"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/the_logo" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/bt_library"
+        style="@style/my_bt_style"
         android:layout_width="265dp"
         android:layout_height="70dp"
-        android:text="Библиотека"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="24dp"
+        android:text="@string/Library"
+        android:textStyle="italic"
+        app:layout_constraintStart_toEndOf="@id/iv_library"
+        app:layout_constraintTop_toBottomOf="@+id/the_logo" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

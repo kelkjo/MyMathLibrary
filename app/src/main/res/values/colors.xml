@@ -4,4 +4,13 @@
     <color name="white">#FFFFFFFF</color>
     <color name="grey_divider">#32DFDCDC</color>
     <color name="theory_purple">#A04FC3</color>
+    <color name="pinkish">#EA20B1</color>
+    <color name="DarkBlue">#CC00008B</color>
+    <color name="BlueViolet">#A68A2BE2</color>
+    <color name="Red_40">#65FF0000</color>
+    <color name="LightGray">#D3D3D3</color>
+    <color name="Yellow">#FFFF00</color>
+    <color name="black_60">#99000000</color>
+    <color name="black_95">#F2000000</color>
+    <color name="white_40">#66FFFFFF</color>
 </resources>

@@ -1,39 +1,23 @@
 package com.example.mymathlibrary;
+import android.annotation.SuppressLint;
+import android.graphics.drawable.Drawable;
 
-import android.widget.ImageView;
+import androidx.annotation.DrawableRes;
+import androidx.fragment.app.Fragment;
 
-import com.example.mymathlibrary.Engine.Item;
-
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
-public class Theory {
-    public static Map<String, Integer> theoryKey;
-    public static Map<Integer, String> theoryImago;
-    public static Map<Integer, String> theoryDef;
-    public static void main(String[] args) {
-        theoryKey = new HashMap<>();
-        theoryImago = new HashMap<>();
-        theoryKey.put("Apple",0);
-        theoryKey.put("Banana", 1);
-        theoryKey.put("Cherry", 2);
-        theoryKey.put("Date", 3);
-        theoryKey.put("Fig", 4);
-        theoryKey.put("Grape", 5);
-        theoryKey.put("Kiwi", 6);
-        theoryKey.put("Lemon", 7);
-        theoryKey.put("Mango", 8);
-        theoryKey.put("Orange", 9);
-        theoryKey.put("Papaya", 10);
-        theoryKey.put("Peach", 11);
-        theoryKey.put("Pear", 12);
-        theoryKey.put("Pineapple", 13);
-        theoryKey.put("Plum", 14);
-        theoryKey.put("Raspberry",  15);
-        theoryKey.put("Strawberry",  16);
-        theoryKey.put("Tangerine",  17);
-        theoryKey.put("Watermelon",  18);
-        theoryImago.put(0, "pifagor_theorem.png");
-        theoryDef.put(0, "summa kvadratov");
-    }
+public class Theory extends Fragment {
+    private Drawable imagev;
+    public static Map<String, Integer> theoryKeys = new HashMap<String, Integer>()
+    {{
+        put("Теорема Пифагора", 0);
+        put("Теорема Фаллеса", 1);
+    }};
+    public static String[] theoryDef = {"Сумма квадратов катетов равна квадрату гипотенузы.",
+            "Если параллельные прямые, пересекающие стороны угла, отсекают на одной его стороне равные отрезки, то они отсекают равные отрезки и на другой стороне угла."};
+    public static String[] theoryImago = {"pifagor_theorem", "fales_theorem"};
 }
