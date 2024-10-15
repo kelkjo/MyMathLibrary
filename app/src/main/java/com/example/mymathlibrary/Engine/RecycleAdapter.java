@@ -5,6 +5,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,16 +16,19 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHold
     private ArrayList<Item> itemArrayList;
     private Context context;
     private final RecyclerInterface recyclerInterface;
+    private static Button button;
     public RecycleAdapter(ArrayList<Item> itemArrayList, Context context,
-                          RecyclerInterface recyclerInterface) {
+                          RecyclerInterface recyclerInterface, Button button) {
         this.itemArrayList = itemArrayList;
         this.context = context;
         this.recyclerInterface = recyclerInterface;
+        this.button = button;
     }
     @SuppressLint("NotifyDataSetChanged")
     public void filterList(ArrayList<Item> filterlist) {
         itemArrayList = filterlist;
         notifyDataSetChanged();
+        button.setVisibility(View.INVISIBLE);
     }
     public static class ItemViewHolder extends RecyclerView.ViewHolder {
         public ItemViewHolder(View convertView) {

@@ -15,7 +15,7 @@ public class Theory extends Fragment {
     public static Map<String, Integer> theoryKeys = new HashMap<String, Integer>()
     {{
         put("Теорема Пифагора", 0);
-        put("Теорема Фаллеса", 1);
+        put("Теорема Фалеса", 1);
     }};
     public static String[] theoryDef = {"Сумма квадратов катетов равна квадрату гипотенузы.",
             "Если параллельные прямые, пересекающие стороны угла, отсекают на одной его стороне равные отрезки, то они отсекают равные отрезки и на другой стороне угла."};
