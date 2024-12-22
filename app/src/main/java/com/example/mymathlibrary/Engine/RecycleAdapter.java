@@ -1,34 +1,36 @@
 package com.example.mymathlibrary.Engine;
 
+import static com.example.mymathlibrary.Dicts.FilterItems.filterItems;
+import static com.example.mymathlibrary.Dicts.Theory.theoryFilter;
+import static com.example.mymathlibrary.Dicts.Theory.theoryList;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.mymathlibrary.Dicts.Theory;
 import com.example.mymathlibrary.R;
 import java.util.ArrayList;
 
 public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHolder> {
-    private ArrayList<Item> itemArrayList;
+    private ArrayList<String> itemArrayList;
     private Context context;
     private final RecyclerInterface recyclerInterface;
-    private static Button button;
-    public RecycleAdapter(ArrayList<Item> itemArrayList, Context context,
-                          RecyclerInterface recyclerInterface, Button button) {
+    public RecycleAdapter(ArrayList<String> itemArrayList, Context context,
+                          RecyclerInterface recyclerInterface) {
         this.itemArrayList = itemArrayList;
         this.context = context;
         this.recyclerInterface = recyclerInterface;
-        this.button = button;
     }
     @SuppressLint("NotifyDataSetChanged")
-    public void filterList(ArrayList<Item> filterlist) {
+    public void filterList(ArrayList<String> filterlist) {
         itemArrayList = filterlist;
         notifyDataSetChanged();
-        button.setVisibility(View.INVISIBLE);
     }
     public static class ItemViewHolder extends RecyclerView.ViewHolder {
         public ItemViewHolder(View convertView) {
@@ -45,9 +47,13 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull RecycleAdapter.ViewHolder holder, int position) {
-        Item model = itemArrayList.get(position);
-        holder.courseNameTV.setText(model.getItemName());
-        holder.courseDescTV.setText(model.getItemType());
+        String model = itemArrayList.get(position);
+        holder.courseNameTV.setText(model);
+        try {
+            String a = filterItems.get((theoryFilter.get(theoryList.indexOf(model))).charAt(0));
+            //TODO Сделать нормальным отображение теоремы
+            holder.courseDescTV.setText(a);
+        } catch (Exception ignore){}
     }
 
     @Override
