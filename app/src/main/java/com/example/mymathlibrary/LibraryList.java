@@ -87,10 +87,8 @@ public class LibraryList extends AppCompatActivity implements RecyclerInterface 
             }
         }
         if (filteredlist.isEmpty()) {
-            System.out.println("non");
             adapter.filterList(filteredlist);
         } else {
-            System.out.println("yes");
             adapter.filterList(filteredlist);
         }
     }

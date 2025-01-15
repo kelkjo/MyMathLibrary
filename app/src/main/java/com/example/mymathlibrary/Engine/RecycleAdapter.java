@@ -50,9 +50,8 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHold
         String model = itemArrayList.get(position);
         holder.courseNameTV.setText(model);
         try {
-            String a = filterItems.get((theoryFilter.get(theoryList.indexOf(model))).charAt(0));
-            //TODO Сделать нормальным отображение теоремы
-            holder.courseDescTV.setText(a);
+            int a  = theoryList.indexOf(model);
+            holder.courseDescTV.setText(filterItems.get(Integer.parseInt((theoryFilter.get(a)).substring(0, 1))));
         } catch (Exception ignore){}
     }
 
