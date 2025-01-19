@@ -19,6 +19,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
@@ -39,6 +40,7 @@ import java.util.Objects;
 public class FilterActivity extends AppCompatActivity {
     private Context context;
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,16 +50,11 @@ public class FilterActivity extends AppCompatActivity {
         ScrollView sv = new ScrollView(this);
         LinearLayout ll = new LinearLayout(this);
         ll.setOrientation(LinearLayout.VERTICAL);
+        ll.setBackground(getResources().getDrawable(R.drawable.checking));
         sv.addView(ll);
         ContextThemeWrapper newContext = new ContextThemeWrapper(context, R.style.my_bt_style);
-        Button back = new MaterialButton(this);
-//        Button back = new Button(context, null, android.R.attr.buttonStyleSmall);
-        back.setText("Назад");
-        back.setBackgroundColor(Color.MAGENTA);
-        LinearLayout.LayoutParams buttonLayoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-        buttonLayoutParams.setMargins(50, 20, 0, 0);
-        back.setLayoutParams(buttonLayoutParams);
-        back.setTextAppearance(R.style.my_bt_style);
+        ImageView back = new ImageView(this);
+        back.setImageResource(R.drawable.backarrow);
         ll.addView(back);
         List<CheckBox> checkArray = new ArrayList<>();
         List<Boolean> boolArray = new ArrayList<>();
@@ -70,11 +67,10 @@ public class FilterActivity extends AppCompatActivity {
             if (boolArray.get(i)){
                 cb.setChecked(true);
             }
+            cb.setButtonDrawable(R.drawable.checkbox_selector);
             cb.setText(filterItems.get(i));
             cb.setFontFeatureSettings("nexa_bold");
             cb.setTextColor(Color.MAGENTA);
-//            @SuppressLint("UseCompatLoadingForDrawables") Drawable drawable = getResources().getDrawable(android.R.drawable.ic_delete);
-//            cb.setButtonDrawable(drawable);
             checkArray.add(cb);
             ll.addView(cb);
         }

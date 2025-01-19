@@ -27,7 +27,9 @@ import java.util.ArrayList;
 public class LibraryList extends AppCompatActivity implements RecyclerInterface {
     private RecyclerView itemRV;
     private RecycleAdapter adapter;
+    ArrayList<String> filteredList;
     ImageView ivFilter;
+    ImageView ivBack;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,10 +38,17 @@ public class LibraryList extends AppCompatActivity implements RecyclerInterface 
         w.getDecorView().setSystemUiVisibility(SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
         ivFilter = (ImageView) findViewById(R.id.iv_filter);
         ivFilter.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LibraryList.this, FilterActivity.class);
+                startActivity(intent);
+            }
+        });
+        ivBack = (ImageView) findViewById(R.id.bt_backlb);
+        ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LibraryList.this, MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -86,11 +95,9 @@ public class LibraryList extends AppCompatActivity implements RecyclerInterface 
                 filteredlist.add(theoryList.get(i));
             }
         }
-        if (filteredlist.isEmpty()) {
-            adapter.filterList(filteredlist);
-        } else {
-            adapter.filterList(filteredlist);
-        }
+        adapter.filterList(filteredlist);
+        filteredList = filteredlist;
+        System.out.println(filteredlist);
     }
     private void buildRecyclerView() {
         adapter = new RecycleAdapter((ArrayList<String>) theoryList, LibraryList.this, this);
@@ -103,8 +110,7 @@ public class LibraryList extends AppCompatActivity implements RecyclerInterface 
     @Override
     public void onItemClicked(int position) {
         Intent LibraryListIntent = new Intent(LibraryList.this, TheoremIntent.class);
-        System.out.println(Integer.parseInt(theoryFilter.get(position).substring(0, 1)));
-        LibraryListIntent.putExtra("Name", theoryList.get(position));
+        LibraryListIntent.putExtra("Name", filteredList.get(position));
         startActivity(LibraryListIntent);
     }
 }

@@ -10,6 +10,7 @@ import static com.example.mymathlibrary.Dicts.Theory.theoryList;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -22,7 +23,7 @@ public class TheoremIntent extends AppCompatActivity {
     private ImageView imageIV;
     private TextView textTV;
     private TextView textType;
-    Button btLibrary;
+    private ImageView btLibrary;
     @SuppressLint({"UseCompatLoadingForDrawables", "DiscouragedApi", "MissingInflatedId"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +42,7 @@ public class TheoremIntent extends AppCompatActivity {
         int ImageId = getResources().getIdentifier(imageName,"drawable", getPackageName());
         imageIV.setImageResource(ImageId);
 
-        btLibrary = (Button) findViewById(R.id.bt_backlb);
+        btLibrary = (ImageView) findViewById(R.id.bt_backlb);
         btLibrary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

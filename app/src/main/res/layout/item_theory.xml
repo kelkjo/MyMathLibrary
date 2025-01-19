@@ -10,24 +10,30 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="80dp"
+        android:background="@drawable/item_back">
+
         <TextView
             android:id="@+id/idTVTheoryName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="8dp"
+            android:fontFamily="@font/kid_font"
+            android:padding="6dp"
             android:text="Theory name"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:textColor="@color/white"
+            android:textSize="22sp" />
 
         <TextView
             android:id="@+id/idTVTheoryDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/idTVTheoryName"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/kid_font"
             android:padding="5dp"
             android:text="Theory"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="18sp" />
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

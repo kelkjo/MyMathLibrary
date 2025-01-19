@@ -6,11 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/theory_purple"
     tools:context=".TheoremIntent">
 
     <ImageView
         android:id="@+id/iv_intent"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true" />
 
@@ -19,8 +20,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+        android:fontFamily="@font/nexa_bold"
         android:padding="4dp"
-        android:textColor="@color/theory_purple"
+        android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/tv_intent" />
@@ -31,24 +33,25 @@
         android:layout_height="200dp"
         android:layout_above="@+id/iv_intent"
         android:layout_below="@+id/tv_intent_type"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="9dp"
         android:padding="4dp"
         android:textAlignment="center"
-        android:textColor="@color/theory_purple"
+        android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/tv_intent_type"
-        app:layout_constraintBottom_toTopOf="@id/iv_intent"/>
+        app:layout_constraintBottom_toTopOf="@id/iv_intent"
+        app:layout_constraintTop_toBottomOf="@id/tv_intent_type" />
 
-    <com.google.android.material.button.MaterialButton
+    <ImageView
         android:id="@+id/bt_backlb"
-        android:layout_width="140dp"
-        style="@style/my_bt_style"
-        android:layout_height="50dp"
+        android:layout_width="200dp"
+        android:layout_height="140dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="7dp"
-        android:layout_marginBottom="5dp"
-        android:text="Назад"
+        android:layout_marginStart="-40dp"
+        android:layout_marginBottom="-33dp"
+        android:src="@drawable/backarrow"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 </RelativeLayout>

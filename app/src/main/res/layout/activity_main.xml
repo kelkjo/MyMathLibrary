@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bc_alpha"
-    android:backgroundTint="@color/DarkBlue"
+    android:background="@drawable/recycler_back"
     tools:context=".MainActivity">
 
     <TextView
@@ -20,7 +19,7 @@
         android:shadowDy="10"
         android:shadowRadius="20"
         android:text="@string/your_math_library"
-        android:textColor="@color/pinkish"
+        android:textColor="@color/DarkBlue"
         android:textSize="30sp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,8 +30,8 @@
 
     <ImageView
         android:id="@+id/iv_library"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="35dp"
         android:src="@drawable/library"
@@ -43,6 +42,7 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/bt_library"
         style="@style/my_bt_style"
+        android:backgroundTint="@color/DarkBlue"
         android:layout_width="265dp"
         android:layout_height="70dp"
         android:layout_marginTop="30dp"
