@@ -7,10 +7,15 @@
     <color name="pinkish">#EA20B1</color>
     <color name="DarkBlue">#CC00008B</color>
     <color name="BlueViolet">#A68A2BE2</color>
-    <color name="Red_40">#65FF0000</color>
     <color name="LightGray">#D3D3D3</color>
-    <color name="Yellow">#FFFF00</color>
     <color name="black_60">#99000000</color>
     <color name="black_95">#F2000000</color>
     <color name="white_40">#66FFFFFF</color>
+    <color name="greeny">#661A2F06</color>
+    <color name="caesar">#669FC7A0</color>
+    <color name="maingreen">#77dd77</color>
+    <color name="forestgreen">#2b452a</color>
+    <color name="tritanomaly">#7ac28a</color>
+    <color name="desk">#1E5945</color>
+    <color name="arlekin">#44944A</color>
 </resources>

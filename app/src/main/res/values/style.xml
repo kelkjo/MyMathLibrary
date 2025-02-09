@@ -2,14 +2,10 @@
 <resources>
     <style name="my_bt_style" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="android:backgroundTint">@color/white_40</item>
-        <item name="android:fontFamily">@font/nunito_h</item>
-        <item name="android:textColor">@color/pinkish</item>
+        <item name="android:fontFamily">@font/fredoka_one</item>
+        <item name="android:textColor">@color/forestgreen</item>
         <item name="android:textSize">24sp</item>
-        <item name="android:textStyle">bold</item>
         <item name="cornerRadius">16dp</item>
-        <item name="strokeColor">@color/theory_purple</item>
-        <item name="strokeWidth">2dp</item>
-        <item name="rippleColor">@color/pinkish</item>
     </style>
     <style name="MyCheckBox" parent="Theme.AppCompat.Light">
         <item name="colorControlNormal">@android:color/holo_green_light</item>

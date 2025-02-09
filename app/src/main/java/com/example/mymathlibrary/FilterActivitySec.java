@@ -2,9 +2,9 @@ package com.example.mymathlibrary;
 
 import static android.view.View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
 
-import static com.example.mymathlibrary.Dicts.FilterItems.filterHelper;
-import static com.example.mymathlibrary.Dicts.FilterItems.filterItems;
-import static com.example.mymathlibrary.Dicts.FilterItems.filterKeys;
+import static com.example.mymathlibrary.Dicts.FilterItemsSec.filterHelperTask;
+import static com.example.mymathlibrary.Dicts.FilterItemsSec.filterItemsTask;
+import static com.example.mymathlibrary.Dicts.FilterItemsSec.filterKeysTask;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -39,7 +39,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-public class FilterActivity extends AppCompatActivity {
+public class FilterActivitySec extends AppCompatActivity {
     private Context context;
 
     @SuppressLint({"UseCompatLoadingForDrawables", "ResourceAsColor"})
@@ -52,7 +52,7 @@ public class FilterActivity extends AppCompatActivity {
 
         List<CheckBox> checkArray = new ArrayList<>();
         List<Boolean> boolArray = new ArrayList<>();
-        for ( Map.Entry<String, Boolean> entry : filterKeys.entrySet()) {
+        for ( Map.Entry<String, Boolean> entry : filterKeysTask.entrySet()) {
             Boolean tab = entry.getValue();
             boolArray.add(tab);
         }
@@ -73,13 +73,13 @@ public class FilterActivity extends AppCompatActivity {
         backButton.setScaleY(1.4f);
         backButton.setLayoutParams(imageParams);
         linearLayout.addView(backButton);
-        for(int i = 0; i < filterItems.size(); i++) {
+        for(int i = 0; i < filterItemsTask.size(); i++) {
             CheckBox cb = new CheckBox(this);
             if (boolArray.get(i)){
                 cb.setChecked(true);
             }
             cb.setButtonDrawable(R.drawable.checkbox_selector);
-            cb.setText(filterItems.get(i));
+            cb.setText(filterItemsTask.get(i));
             cb.setTextColor(Color.parseColor("#2b452a"));
             cb.setTextSize(24);
             checkArray.add(cb);
@@ -91,25 +91,22 @@ public class FilterActivity extends AppCompatActivity {
             ));
             linearLayout.addView(cb);
         }
-
-
-
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(FilterActivity.this, LibraryList.class);
+                Intent intent = new Intent(FilterActivitySec.this, TaskList.class);
                 Map<String, Boolean> demoMap = new LinkedHashMap<>();
-                filterHelper.clear();
-                for (int i = 0; i < filterKeys.size(); i++) {
+                filterHelperTask.clear();
+                for (int i = 0; i < filterKeysTask.size(); i++) {
                     if (checkArray.get(i).isChecked()){
-                        demoMap.put((String) filterItems.get(i), true);
-                        filterHelper.add(filterItems.indexOf(filterItems.get(i)));
+                        demoMap.put((String) filterItemsTask.get(i), true);
+                        filterHelperTask.add(filterItemsTask.indexOf(filterItemsTask.get(i)));
                     } else {
-                        demoMap.put((String) filterItems.get(i), false);
+                        demoMap.put((String) filterItemsTask.get(i), false);
                     }
                 }
-                System.out.println(filterHelper);
-                filterKeys = demoMap;
+                System.out.println(filterHelperTask);
+                filterKeysTask = demoMap;
                 startActivity(intent);
             }
         });

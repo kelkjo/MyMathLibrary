@@ -18,6 +18,15 @@
         android:theme="@style/Theme.MyMathLibrary"
         tools:targetApi="31">
         <activity
+            android:name=".FilterActivitySec"
+            android:exported="false" />
+        <activity
+            android:name=".TaskIntent"
+            android:exported="false" />
+        <activity
+            android:name=".TaskList"
+            android:exported="false" />
+        <activity
             android:name=".FilterActivity"
             android:exported="false" />
         <activity

@@ -1,10 +1,11 @@
 package com.example.mymathlibrary;
 import static android.view.View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
-import static com.example.mymathlibrary.Dicts.FilterItems.filterHelper;
-import static com.example.mymathlibrary.Dicts.FilterItems.filterItems;
-import static com.example.mymathlibrary.Dicts.Theory.theoryFilter;
-import static com.example.mymathlibrary.Dicts.Theory.theoryList;
-import android.content.Context;
+import static com.example.mymathlibrary.Dicts.FilterItemsSec.filterHelperTask;
+import static com.example.mymathlibrary.Dicts.FilterItemsSec.filterItemsTask;
+import static com.example.mymathlibrary.Dicts.FilterItemsSec.filterHelperTask;
+import static com.example.mymathlibrary.Dicts.Tasks.taskFilter;
+import static com.example.mymathlibrary.Dicts.Tasks.taskList;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -21,26 +22,25 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.mymathlibrary.Engine.RecycleAdapter;
 import com.example.mymathlibrary.Engine.RecyclerInterface;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class LibraryList extends AppCompatActivity implements RecyclerInterface {
+public class TaskList extends AppCompatActivity implements RecyclerInterface {
     private RecyclerView itemRV;
     private RecycleAdapter adapter;
-    ArrayList<String> filteredList;
+    public ArrayList<String> filteredList;
     ImageView ivFilter;
     ImageView ivBack;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_library_list);
+        setContentView(R.layout.activity_task_list);
         Window w = getWindow();
         w.getDecorView().setSystemUiVisibility(SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
         ivFilter = (ImageView) findViewById(R.id.iv_filter);
         ivFilter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LibraryList.this, FilterActivity.class);
+                Intent intent = new Intent(TaskList.this, FilterActivitySec.class);
                 startActivity(intent);
             }
         });
@@ -48,7 +48,7 @@ public class LibraryList extends AppCompatActivity implements RecyclerInterface 
         ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LibraryList.this, MainActivity.class);
+                Intent intent = new Intent(TaskList.this, MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -68,9 +68,7 @@ public class LibraryList extends AppCompatActivity implements RecyclerInterface 
         assert searchView != null;
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
-            public boolean onQueryTextSubmit(String query) {
-                return false;
-            }
+            public boolean onQueryTextSubmit(String query) {return false;}
 
             @Override
             public boolean onQueryTextChange(String newText) {
@@ -80,26 +78,25 @@ public class LibraryList extends AppCompatActivity implements RecyclerInterface 
         });
         return true;
     }
-
     private void filter(String text) {
         ArrayList<String> filteredlist = new ArrayList<>();
-        for (int i = 0; i < theoryFilter.size(); i++) {
+        for (int i = 0; i < taskFilter.size(); i++) {
             int b = 0;
-            for (Integer integer : filterHelper) {
+            for (Integer integer : filterHelperTask) {
                 String integ = "" + integer;
-                if ((theoryFilter.get(i)).contains(integ)) {
+                if ((taskFilter.get(i)).contains(integ)) {
                     b++;
                 }
             }
-            if (b == filterHelper.size() && theoryList.get(i).toLowerCase().contains(text.toLowerCase())) {
-                filteredlist.add(theoryList.get(i));
+            if (b == filterHelperTask.size() && taskList.get(i).toLowerCase().contains(text.toLowerCase())) {
+                filteredlist.add(taskList.get(i));
             }
         }
         adapter.filterList(filteredlist);
         filteredList = filteredlist;
     }
     private void buildRecyclerView() {
-        adapter = new RecycleAdapter((ArrayList<String>) theoryList, LibraryList.this, this);
+        adapter = new RecycleAdapter((ArrayList<String>) taskList, TaskList.this, this);
         LinearLayoutManager manager = new LinearLayoutManager(this);
         itemRV.setHasFixedSize(true);
         itemRV.setLayoutManager(manager);
@@ -108,8 +105,8 @@ public class LibraryList extends AppCompatActivity implements RecyclerInterface 
 
     @Override
     public void onItemClicked(int position) {
-        Intent LibraryListIntent = new Intent(LibraryList.this, TheoremIntent.class);
-        LibraryListIntent.putExtra("Name", filteredList.get(position));
-        startActivity(LibraryListIntent);
+        Intent TaskListIntent = new Intent(TaskList.this, TaskIntent.class);
+        TaskListIntent.putExtra("Name", filteredList.get(position));
+        startActivity(TaskListIntent);
     }
 }

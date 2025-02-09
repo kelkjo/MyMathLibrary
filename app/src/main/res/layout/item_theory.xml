@@ -10,17 +10,17 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:background="@drawable/item_back">
+        android:layout_height="match_parent"
+        android:background="@color/caesar">
 
         <TextView
             android:id="@+id/idTVTheoryName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/kid_font"
+            android:fontFamily="@font/fredoka_one"
             android:padding="6dp"
             android:text="Theory name"
-            android:textColor="@color/white"
+            android:textColor="@color/maingreen"
             android:textSize="22sp" />
 
         <TextView
@@ -28,11 +28,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/idTVTheoryName"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="-5dp"
             android:fontFamily="@font/kid_font"
             android:padding="5dp"
             android:text="Theory"
-            android:textColor="@color/black"
+            android:textColor="@color/forestgreen"
             android:textSize="18sp" />
     </RelativeLayout>
 

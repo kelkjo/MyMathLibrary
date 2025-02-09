@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/tritanomaly"
-    tools:context=".TheoremIntent">
+    tools:context=".TaskIntent">
 
     <ImageView
         android:id="@+id/iv_intent"

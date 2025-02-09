@@ -8,9 +8,8 @@ import android.view.Window;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-
     Button btLibrary;
-
+    Button btTask;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +24,14 @@ public class MainActivity extends AppCompatActivity {
                 Intent mainActivityIntent = new Intent(MainActivity.this, LibraryList.class);
                 startActivity(mainActivityIntent);
 
+            }
+        });
+        btTask = (Button) findViewById(R.id.bt_task);
+        btTask.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent taskIntent = new Intent(MainActivity.this, TaskList.class);
+                startActivity(taskIntent);
             }
         });
     }
