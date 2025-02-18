@@ -4,7 +4,7 @@
         <item name="android:backgroundTint">@color/white_40</item>
         <item name="android:fontFamily">@font/fredoka_one</item>
         <item name="android:textColor">@color/forestgreen</item>
-        <item name="android:textSize">24sp</item>
+        <item name="android:textSize">20sp</item>
         <item name="cornerRadius">16dp</item>
     </style>
     <style name="MyCheckBox" parent="Theme.AppCompat.Light">

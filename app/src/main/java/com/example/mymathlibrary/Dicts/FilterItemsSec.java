@@ -13,6 +13,11 @@ public class FilterItemsSec {
         filterKeysTask.put("Стереомерия", false);
         filterKeysTask.put("Четырёхугольник", false);
         filterKeysTask.put("Треугольник", false);
+        filterKeysTask.put("Трапеция", false);
+        filterKeysTask.put("Ромб", false);
+        filterKeysTask.put("Прямоугольник", false);
+        filterKeysTask.put("Квадрат", false);
+        filterKeysTask.put("Теорема синусов", false);
     }
 
     public static List<String> filterItemsTask = new ArrayList<String>() {{
@@ -20,6 +25,11 @@ public class FilterItemsSec {
         add("Стереомерия");
         add("Четырёхугольник");
         add("Треугольник");
+        add("Трапеция");
+        add("Ромб");
+        add("Прямоугольник");
+        add("Квадрат");
+        add("Теорема синусов");
     }};
     public static List<Integer> filterHelperTask = new ArrayList<Integer>();
 }

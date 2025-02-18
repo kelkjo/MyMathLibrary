@@ -20,13 +20,14 @@ import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.mymathlibrary.Engine.RecycleAdapter;
+import com.example.mymathlibrary.Engine.RecycleAdapterSec;
 import com.example.mymathlibrary.Engine.RecyclerInterface;
 
 import java.util.ArrayList;
 
 public class TaskList extends AppCompatActivity implements RecyclerInterface {
     private RecyclerView itemRV;
-    private RecycleAdapter adapter;
+    private RecycleAdapterSec adapter;
     public ArrayList<String> filteredList;
     ImageView ivFilter;
     ImageView ivBack;
@@ -96,7 +97,7 @@ public class TaskList extends AppCompatActivity implements RecyclerInterface {
         filteredList = filteredlist;
     }
     private void buildRecyclerView() {
-        adapter = new RecycleAdapter((ArrayList<String>) taskList, TaskList.this, this);
+        adapter = new RecycleAdapterSec((ArrayList<String>) taskList, TaskList.this, this);
         LinearLayoutManager manager = new LinearLayoutManager(this);
         itemRV.setHasFixedSize(true);
         itemRV.setLayoutManager(manager);

@@ -32,6 +32,7 @@ android {
 }
 
 dependencies {
+//    implementation(libs.modelviewer)
     implementation(libs.glide)
     annotationProcessor(libs.compiler)
     implementation(libs.appcompat)

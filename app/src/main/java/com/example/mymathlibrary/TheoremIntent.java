@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -47,7 +48,8 @@ public class TheoremIntent extends AppCompatActivity {
         textTV.setText(theoryDef.get(a));
         textTV.setTypeface(typeface);
         textTV.setTextColor(R.color.arlekin);
-        textTV.setTextSize(30);
+        textTV.setGravity(Gravity.CENTER);
+        textTV.setTextSize(25);
 
         ImageView imageIV = (ImageView) findViewById(R.id.iv_intent);
         String imageName = (String) theoryImago.get(a);
