@@ -9,6 +9,7 @@ import static com.example.mymathlibrary.Dicts.Theory.theoryList;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.provider.ContactsContract;
@@ -41,15 +42,15 @@ public class TheoremIntent extends AppCompatActivity {
         textType = (TextView) findViewById(R.id.tv_intent_type);
         textType.setText(filterItems.get(Integer.parseInt((theoryFilter.get(a)).substring(0, 1))));
         textType.setTypeface(typeface);
-        textType.setTextColor(R.color.greeny);
+        textType.setTextColor(Color.BLACK);
         textType.setTextSize(30);
 
         textTV = (TextView) findViewById(R.id.tv_intent);
         textTV.setText(theoryDef.get(a));
         textTV.setTypeface(typeface);
-        textTV.setTextColor(R.color.arlekin);
+        textTV.setTextColor(Color.BLACK);
         textTV.setGravity(Gravity.CENTER);
-        textTV.setTextSize(25);
+        textTV.setTextSize(20);
 
         ImageView imageIV = (ImageView) findViewById(R.id.iv_intent);
         String imageName = (String) theoryImago.get(a);

@@ -37,7 +37,7 @@ public class Tasks {
     }};
     public static List<String> taskImago = new ArrayList<String>() {{
         add("legend");
-        add("piramide");
+        add("piro");
         add("cut_def");
         add("ray_def");
         add("angle_def");

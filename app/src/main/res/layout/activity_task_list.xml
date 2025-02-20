@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/tritanomaly"
+    android:tileMode="disabled"
     tools:context=".TaskList">
 
     <androidx.appcompat.widget.Toolbar

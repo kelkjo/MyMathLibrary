@@ -20,7 +20,7 @@
             android:fontFamily="@font/fredoka_one"
             android:padding="6dp"
             android:text="Theory name"
-            android:textColor="@color/maingreen"
+            android:textColor="@color/forestgreen"
             android:textSize="22sp" />
 
         <TextView
@@ -32,7 +32,7 @@
             android:fontFamily="@font/kid_font"
             android:padding="5dp"
             android:text="Theory"
-            android:textColor="@color/forestgreen"
+            android:textColor="@color/desk"
             android:textSize="18sp" />
     </RelativeLayout>
 
