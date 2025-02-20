@@ -20,7 +20,7 @@
             android:fontFamily="@font/fredoka_one"
             android:padding="6dp"
             android:text="Theory name"
-            android:textColor="@color/maingreen"
+            android:textColor="@color/forestgreen"
             android:textSize="22sp" />
 
     </RelativeLayout>

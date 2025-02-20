@@ -17,7 +17,8 @@ public class FilterItemsSec {
         filterKeysTask.put("Ромб", false);
         filterKeysTask.put("Прямоугольник", false);
         filterKeysTask.put("Квадрат", false);
-        filterKeysTask.put("Теорема синусов", false);
+        filterKeysTask.put("Площадь", false);
+        filterKeysTask.put("Объем", false);
     }
 
     public static List<String> filterItemsTask = new ArrayList<String>() {{
@@ -29,7 +30,8 @@ public class FilterItemsSec {
         add("Ромб");
         add("Прямоугольник");
         add("Квадрат");
-        add("Теорема синусов");
+        add("Площадь");
+        add("Объём");
     }};
     public static List<Integer> filterHelperTask = new ArrayList<Integer>();
 }

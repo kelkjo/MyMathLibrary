@@ -5,10 +5,16 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/tritanomaly"
+    android:background="@null"
     android:orientation="vertical"
     tools:context=".TaskIntent">
-
+    <ImageView
+        android:id="@+id/main_backgroundImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fon" />
     <TextView
         android:id="@+id/tv_task"
         android:layout_width="match_parent"
@@ -16,9 +22,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="2dp"
         android:layout_marginTop="2dp"
-        android:fontFamily="@font/nexa_bold"
         android:padding="4dp"
-        android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/tv_intent" />
@@ -33,7 +37,6 @@
         android:gravity="center"
         android:padding="4dp"
         android:textAlignment="center"
-        android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/iv_intent"

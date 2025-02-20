@@ -6,8 +6,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/tritanomaly"
+    android:background="@null"
     tools:context=".TheoremIntent">
+
+    <ImageView
+        android:id="@+id/main_backgroundImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fon" />
 
     <ImageView
         android:id="@+id/iv_intent"
@@ -20,9 +28,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:fontFamily="@font/nexa_bold"
         android:padding="4dp"
-        android:textColor="@color/white"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="3dp"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/tv_intent" />
@@ -33,11 +41,9 @@
         android:layout_height="200dp"
         android:layout_above="@+id/iv_intent"
         android:layout_below="@+id/tv_intent_type"
-        android:layout_marginTop="2dp"
         android:layout_marginBottom="9dp"
-        android:padding="4dp"
+        android:padding="2dp"
         android:textAlignment="center"
-        android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/iv_intent"

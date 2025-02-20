@@ -49,14 +49,15 @@ public class TaskIntent extends AppCompatActivity {
         taskName = (TextView) findViewById(R.id.tv_task);
         taskName.setText(taskList.get(a));
         taskName.setTypeface(typeface);
-        taskName.setTextColor(R.color.greeny);
+        taskName.setTextColor(Color.BLACK);
         taskName.setTextSize(30);
 
         textTV = (TextView) findViewById(R.id.tv_intent);
         textTV.setText(taskDef.get(a));
         textTV.setTypeface(typeface);
-        textTV.setTextColor(R.color.arlekin);
+        textTV.setTextColor(Color.BLACK);
         textTV.setGravity(Gravity.CENTER);
+        textTV.setTextSize(textSize(taskDef.get(a).length()));
 
         EditText editView = findViewById(R.id.editView);
 
@@ -81,10 +82,10 @@ public class TaskIntent extends AppCompatActivity {
         Glide.with(this).load(resId).into(imageIV);
 
         TextView textView = findViewById(R.id.textViewUnderEdit);
-        textView.setTextColor(R.color.arlekin);
+        textView.setTextColor(Color.BLACK);
         textView.setOnClickListener(view -> {
             if (isChanged) {
-                textView.setTextColor(R.color.arlekin);
+                textView.setTextColor(Color.BLACK);
                 textView.setText("Посмотреть решение:");
                 imageIV.setVisibility(View.INVISIBLE);
             } else {
@@ -119,5 +120,15 @@ public class TaskIntent extends AppCompatActivity {
         toast.setView(layout);
         toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 100);
         toast.show();
+    }
+    private int textSize(int size){
+        int t = 30;
+        if (size > 50) {
+            while (size > 1) {
+                size -= 50;
+                t -= 1;
+            }
+        }
+        return t;
     }
 }
