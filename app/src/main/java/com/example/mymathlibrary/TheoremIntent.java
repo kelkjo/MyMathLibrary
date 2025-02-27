@@ -50,7 +50,7 @@ public class TheoremIntent extends AppCompatActivity {
         textTV.setTypeface(typeface);
         textTV.setTextColor(Color.BLACK);
         textTV.setGravity(Gravity.CENTER);
-        textTV.setTextSize(textSize(theoryDef.get(a).length()));
+        textTV.setTextSize(20);
 
         ImageView imageIV = (ImageView) findViewById(R.id.iv_intent);
         String imageName = (String) theoryImago.get(a);
@@ -65,15 +65,5 @@ public class TheoremIntent extends AppCompatActivity {
             }
         });
     }
-private int textSize(int size){
-    int t = 30;
-    if (size > 50) {
-        while (size > 1) {
-            size -= 50;
-            t -= 1;
-        }
-    }
-    return t;
-}
 
 }
