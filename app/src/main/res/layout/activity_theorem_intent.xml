@@ -1,62 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@null"
     tools:context=".TheoremIntent">
 
     <ImageView
         android:id="@+id/main_backgroundImage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
         android:scaleType="centerCrop"
         android:src="@drawable/fon" />
-
-    <ImageView
-        android:id="@+id/iv_intent"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true" />
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-    <TextView
-        android:id="@+id/tv_intent_type"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:padding="4dp"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@id/tv_intent" />
+        <RelativeLayout
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tv_intent"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_above="@+id/iv_intent"
-        android:layout_below="@+id/tv_intent_type"
-        android:layout_marginTop="2dp"
-        android:layout_marginBottom="9dp"
-        android:padding="4dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/iv_intent"
-        app:layout_constraintTop_toBottomOf="@id/tv_intent_type" />
+            <TextView
+                android:id="@+id/tv_intent_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:padding="4dp"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-    <ImageView
-        android:id="@+id/bt_backlb"
-        android:layout_width="200dp"
-        android:layout_height="140dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="-40dp"
-        android:layout_marginBottom="-33dp"
-        android:src="@drawable/backarrow"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-</RelativeLayout>
+            <TextView
+                android:id="@+id/tv_intent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_intent_type"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="9dp"
+                android:padding="4dp"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/iv_intent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv_intent"
+                android:layout_below="@+id/tv_intent" />
+            <ImageView
+                android:id="@+id/bt_backlb"
+                android:layout_width="200dp"
+                android:layout_height="140dp"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/iv_intent"
+                android:layout_marginStart="-40dp"
+                android:layout_marginBottom="-33dp"
+                android:src="@drawable/backarrow" />
+        </RelativeLayout>
+    </ScrollView>
+</FrameLayout>

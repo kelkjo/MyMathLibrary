@@ -2,6 +2,7 @@ package com.example.mymathlibrary;
 import static android.view.View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
 
 import static com.example.mymathlibrary.Dicts.FilterItems.filterItems;
+import static com.example.mymathlibrary.Dicts.Tasks.taskDef;
 import static com.example.mymathlibrary.Dicts.Theory.theoryDef;
 import static com.example.mymathlibrary.Dicts.Theory.theoryFilter;
 import static com.example.mymathlibrary.Dicts.Theory.theoryImago;
@@ -50,7 +51,7 @@ public class TheoremIntent extends AppCompatActivity {
         textTV.setTypeface(typeface);
         textTV.setTextColor(Color.BLACK);
         textTV.setGravity(Gravity.CENTER);
-        textTV.setTextSize(20);
+        textTV.setTextSize(textSize(theoryDef.get(a).length()));
 
         ImageView imageIV = (ImageView) findViewById(R.id.iv_intent);
         String imageName = (String) theoryImago.get(a);
@@ -64,6 +65,16 @@ public class TheoremIntent extends AppCompatActivity {
                 finishAndRemoveTask();
             }
         });
+    }
+    private int textSize(int size){
+        int t = 30;
+        if (size > 50) {
+            while (size > 1) {
+                size -= 50;
+                t -= 1;
+            }
+        }
+        return t;
     }
 
 }

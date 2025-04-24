@@ -1,8 +1,6 @@
 package com.example.mymathlibrary;
 import static android.view.View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
 import static com.example.mymathlibrary.Dicts.FilterItemsSec.filterHelperTask;
-import static com.example.mymathlibrary.Dicts.FilterItemsSec.filterItemsTask;
-import static com.example.mymathlibrary.Dicts.FilterItemsSec.filterHelperTask;
 import static com.example.mymathlibrary.Dicts.Tasks.taskFilter;
 import static com.example.mymathlibrary.Dicts.Tasks.taskList;
 
