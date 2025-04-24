@@ -41,10 +41,10 @@ public class Tasks {
     }};
     public static List<String> taskImago = new ArrayList<String>() {{
         add("octahedron");
-        add("pyramidius");
+        add("pyramidiusik");
         add("trapezi");
         add("icosahedron");
-        add("circle");
+        add("okrug");
         add("paralelgr");
         add("tetrahedron");
         add("hexahedron");

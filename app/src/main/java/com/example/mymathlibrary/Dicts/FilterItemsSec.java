@@ -9,8 +9,8 @@ public class FilterItemsSec {
     public static Map<String, Boolean> filterKeysTask = new LinkedHashMap<>();
 
     static {
+        filterKeysTask.put("Стереометрия", false);
         filterKeysTask.put("Планиметрия", false);
-        filterKeysTask.put("Стереомерия", false);
         filterKeysTask.put("Четырёхугольник", false);
         filterKeysTask.put("Треугольник", false);
         filterKeysTask.put("Трапеция", false);
@@ -18,12 +18,11 @@ public class FilterItemsSec {
         filterKeysTask.put("Прямоугольник", false);
         filterKeysTask.put("Квадрат", false);
         filterKeysTask.put("Площадь", false);
-        filterKeysTask.put("Объем", false);
     }
 
     public static List<String> filterItemsTask = new ArrayList<String>() {{
+        add("Стереометрия");
         add("Планиметрия");
-        add("Стереомерия");
         add("Четырёхугольник");
         add("Треугольник");
         add("Трапеция");
@@ -31,7 +30,6 @@ public class FilterItemsSec {
         add("Прямоугольник");
         add("Квадрат");
         add("Площадь");
-        add("Объём");
     }};
     public static List<Integer> filterHelperTask = new ArrayList<Integer>();
 }
