@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Фоновое изображение (не прокручивается) -->
     <ImageView
         android:id="@+id/main_backgroundImage"
         android:layout_width="match_parent"
@@ -13,7 +12,6 @@
         android:scaleType="centerCrop"
         android:src="@drawable/fon" />
 
-    <!-- Прокручиваемая область -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -25,7 +23,6 @@
             android:layout_height="wrap_content"
             android:background="@null">
 
-            <!-- Все элементы контента -->
             <TextView
                 android:id="@+id/tv_task"
                 android:layout_width="match_parent"
